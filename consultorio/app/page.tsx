@@ -1,69 +1,85 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans relative">
+      {/* Hamburger menu (top left) */}
+      <div className="fixed top-4 left-4 z-50 p-2">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="rounded-full bg-white/20 dark:bg-black/20 p-2 hover:bg-white/10 dark:hover:bg-black/10 focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg className="h-6 w-6 stroke-white dark:stroke-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/50 dark:bg-white/50 backdrop-blur-sm flex items-center justify-center">
+          <nav className="bg-white dark:bg-black rounded-lg p-6 w-full max-w-md space-y-4 shadow-lg">
+            <h2 className="text-xl font-bold text-center text-black dark:text-white">Menú</h2>
+            <div className="space-y-2">
+              <Link href="/" className="block px-4 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                Inicio
+              </Link>
+              <Link href="/servicios" className="block px-4 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                Servicios
+              </Link>
+              <Link href="/profesionales" className="block px-4 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                Profesionales
+              </Link>
+              <Link href="/testimonios" className="block px-4 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                Testimonios
+              </Link>
+              <Link href="/contacto" className="block px-4 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                Contacto
+              </Link>
+            </div>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 focus:outline-none"
+            >
+              Cerrar
+            </button>
+          </nav>
+        </div>
+      )}
+
+      {/* Hero section */}
+      <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-8">
+          {/* Logo */}
+          <div className="inline-block">
+            {/* Placeholder logo - you can replace with actual image */}
+            <span className="text-5xl font-bold text-blue-600 dark:text-blue-400">
+              Sonrisa Saludable
+            </span>
+          </div>
+
+          {/* Tagline */}
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white max-w-2xl">
+            Cuidamos tu sonrisa con tecnología y calidez
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          {/* Subtext */}
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl">
+            Servicios dentales de alta calidad para toda la familia. Agenda tu cita hoy mismo.
           </p>
+
+          {/* CTA Button */}
+          <Link href="/reserva" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-lg">
+            Agendar Cita
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
