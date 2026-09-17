@@ -1,10 +1,6 @@
 {
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm run dev",
   "buildCommand": "next build",
-  "framework": "nextjs",
-  "regions": ["iad1"],
-  "experimental": {
-    "nodeVersion": "20"
-  }
+  "framework": "nextjs"
 }

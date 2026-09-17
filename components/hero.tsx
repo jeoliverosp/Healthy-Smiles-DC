@@ -23,6 +23,16 @@ export default function Hero() {
 
       {/* ── Content ── */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center">
+        {/* Logo */}
+        <div className="mb-8 flex flex-col items-center gap-4">
+          <div className="h-20 w-20 rounded-full bg-gold flex items-center justify-center">
+            <span className="text-ink font-display font-bold text-3xl">HS</span>
+          </div>
+          <span className="font-display font-semibold text-2xl text-cream">
+            Healthy Smiles
+          </span>
+        </div>
+
         <p className="mb-4 text-step--1 font-body font-medium uppercase tracking-[0.2em] text-cream/70 md:text-step-0">
           Family &amp; Cosmetic Dentistry
         </p>
