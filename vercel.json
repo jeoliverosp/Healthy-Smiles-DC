@@ -1,0 +1,10 @@
+{
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "buildCommand": "next build",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "experimental": {
+    "nodeVersion": "20"
+  }
+}

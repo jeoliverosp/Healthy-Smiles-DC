@@ -17,8 +17,14 @@
 - Root Directory must match repo structure (no nested folder)
 - Vercel auto-detects Next.js — keep `vercel.json` minimal
 
-## Project State
-- Commit `6ce1b8c` — all files at repo root
-- Build passes locally (`/` generated, 4.41 kB)
-- Pushed to `https://github.com/jeoliverosp/Healthy-Smiles-DC`
+## Project State (2026-09-17)
+- Commit `b3cad35` — complete site build
+- Build passes locally, all pages generated
+- Design tokens: earthy palette (#0A0908, #22333B, #EAE0D5, #C6AC8F, #5E503F)
+- Typography: Playfair Display (display) + DM Sans (body)
+- i18n: next-intl with 7 languages (en/es/zh/ko/fa/fr/he)
+- Smart Chatbox: location finder + services + contact flows
+- Google Maps: iframe embed for each location
+- SEO: JSON-LD Dentist schema
 - Deploy URL: `https://healthy-smiles-dc-fh67.vercel.app/`
+- GitHub: `https://github.com/jeoliverosp/Healthy-Smiles-DC`
