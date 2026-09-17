@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "Accueil", "about": "À propos", "services": "Services", "locations": "Emplacements", "contact": "Contact" },
+  "hero": { "tagline": "Dentisterie familiale et esthétique", "title": "Votre sourire, notre passion", "subtitle": "Healthy Smiles Dental Care — la confiance des familles du Maryland", "cta": "Trouver un emplacement" },
+  "services": { "label": "Nos offres", "title": "Nos services", "viewAll": "Voir tous les services" },
+  "locations": { "label": "Nous trouver", "title": "Nos emplacements", "viewAll": "Voir tous les emplacements" },
+  "cta": { "title": "Prêt à sourire ?", "call": "Appelez le (301) 838-4291", "chat": "Discuter" },
+  "footer": { "copyright": "© {year} Healthy Smiles Dental Care. Tous droits réservés." },
+  "chatbox": { "title": "Healthy Smiles", "hi": "Bonjour ! Comment puis-je vous aider ?", "findLocation": "Trouver un emplacement", "services": "Services dentaires", "talkToSomeone": "Parler à quelqu'un", "back": "← Retour" }
+}

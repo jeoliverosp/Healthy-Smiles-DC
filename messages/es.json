@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "locations": "Ubicaciones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tagline": "Odontología Familiar y Cosmética",
+    "title": "Tu Sonrisa, Nuestra Pasión",
+    "subtitle": "Healthy Smiles Dental Care — confiado por familias en Maryland",
+    "cta": "Encuentra una Ubicación Cerca"
+  },
+  "about": {
+    "label": "Nosotros",
+    "title": "Odontología Familiar y Cosmética en Maryland",
+    "desc1": "Healthy Smiles Dental Care ha servido a familias en Maryland por más de 15 años. Nuestro equipo de dentistas experimentados combina tecnología avanzada con atención gentil y compasiva.",
+    "desc2": "Desde limpiezas rutinarias hasta transformaciones completas de sonrisa, ofrecemos servicios dentales integrales en un ambiente cálido y acogedor.",
+    "cta": "Más Información"
+  },
+  "services": {
+    "label": "Lo Que Ofrecemos",
+    "title": "Nuestros Servicios",
+    "viewAll": "Ver Todos los Servicios"
+  },
+  "locations": {
+    "label": "Encuéntranos",
+    "title": "Nuestras Ubicaciones",
+    "viewAll": "Ver Todas las Ubicaciones",
+    "book": "Reservar una Cita"
+  },
+  "doctors": {
+    "label": "Conoce a Tu Equipo",
+    "title": "Nuestros Doctores"
+  },
+  "reviews": {
+    "label": "Lo Que Dicen los Pacientes",
+    "title": "Reseñas",
+    "rating": "4.8 de 5 estrellas — más de 955 reseñas de Google"
+  },
+  "tech": {
+    "label": "Cuidado Avanzado",
+    "title": "Nuestra Tecnología"
+  },
+  "cta": {
+    "title": "¿Listo para Sonreír?",
+    "desc": "Reserva tu cita hoy y descubre por qué miles de familias confían en Healthy Smiles Dental Care.",
+    "call": "Llamar al (301) 838-4291",
+    "chat": "Chatea con Nosotros"
+  },
+  "contact": {
+    "label": "Contáctanos",
+    "title": "Contáctanos",
+    "desc": "Nos encantaría saber de ti. Comunícate con preguntas o para reservar una cita.",
+    "name": "Nombre",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "infoTitle": "Información de Contacto",
+    "mainOffice": "Oficina Principal",
+    "hours": "Horario",
+    "hoursDetail": "Lun–Vie: 9am–6pm\nSáb: 9am–2pm\nDom: Cerrado",
+    "locationsLabel": "Ubicaciones"
+  },
+  "footer": {
+    "tagline": "Odontología familiar y cosmética en Maryland. Tu sonrisa es nuestra pasión.",
+    "navigate": "Navegar",
+    "services": "Servicios",
+    "ourLocations": "Nuestras Ubicaciones",
+    "copyright": "© {year} Healthy Smiles Dental Care. Todos los derechos reservados."
+  },
+  "chatbox": {
+    "title": "Healthy Smiles",
+    "subtitle": "¿Cómo podemos ayudar?",
+    "hi": "¡Hola! ¿Cómo puedo ayudarte hoy?",
+    "findLocation": "Encontrar Ubicación",
+    "services": "Servicios Dentales",
+    "talkToSomeone": "Hablar con Alguien",
+    "zipPrompt": "¿Cuál es tu código postal?",
+    "find": "Buscar",
+    "nearestLocation": "Ubicación más cercana:",
+    "ourServices": "Nuestros servicios:",
+    "callUs": "Llámanos al:",
+    "emergency": "¿Emergencia? Llama ahora — estamos aquí para ayudar.",
+    "back": "← Volver"
+  }
+}

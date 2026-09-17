@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "首页", "about": "关于我们", "services": "服务项目", "locations": "诊所位置", "contact": "联系我们" },
+  "hero": { "tagline": "家庭与美容牙科", "title": "您的微笑，我们的热情", "subtitle": "Healthy Smiles Dental Care — 马里兰州家庭信赖的牙科诊所", "cta": "查找附近诊所" },
+  "services": { "label": "我们的服务", "title": "服务项目", "viewAll": "查看全部服务" },
+  "locations": { "label": "联系我们", "title": "诊所位置", "viewAll": "查看所有位置" },
+  "cta": { "title": "准备好微笑了吗？", "call": "致电 (301) 838-4291", "chat": "在线咨询" },
+  "footer": { "copyright": "© {year} Healthy Smiles Dental Care. 保留所有权利。" },
+  "chatbox": { "title": "Healthy Smiles", "hi": "您好！今天我能帮您什么？", "findLocation": "查找位置", "services": "牙科服务", "talkToSomeone": "联系客服", "back": "← 返回" }
+}

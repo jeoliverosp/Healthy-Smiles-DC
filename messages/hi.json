@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "होम", "about": "हमारे बारे में", "services": "सेवाएँ", "locations": "स्थान", "contact": "संपर्क" },
+  "hero": { "tagline": "पारिवारिक और सौंदर्य दंत चिकित्सा", "title": "आपकी मुस्कान, हमारा जुनून", "subtitle": "Healthy Smiles Dental Care — मैरीलैंड के परिवारों का भरोसा", "cta": "निकटतम स्थान खोजें" },
+  "services": { "label": "हमारी सेवाएँ", "title": "सेवाएँ", "viewAll": "सभी सेवाएँ देखें" },
+  "locations": { "label": "हमें खोजें", "title": "स्थान", "viewAll": "सभी स्थान देखें" },
+  "cta": { "title": "मुस्कुराने के लिए तैयार?", "call": "कॉल करें (301) 838-4291", "chat": "चैट करें" },
+  "footer": { "copyright": "© {year} Healthy Smiles Dental Care. सर्वाधिकार सुरक्षित." },
+  "chatbox": { "title": "Healthy Smiles", "hi": "नमस्ते! आज मैं आपकी कैसे मदद कर सकता हूँ?", "findLocation": "स्थान खोजें", "services": "दंत चिकित्सा सेवाएँ", "talkToSomeone": "बात करें", "back": "← वापस" }
+}

@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "홈", "about": "소개", "services": "서비스", "locations": "위치", "contact": "연락처" },
+  "hero": { "tagline": "가족 및 미용 치과", "title": "당신의 미소, 우리의 열정", "subtitle": "Healthy Smiles Dental Care — 메릴랜드 가족들이 신뢰하는 치과", "cta": "가까운 위치 찾기" },
+  "services": { "label": "제공 서비스", "title": "서비스", "viewAll": "모든 서비스 보기" },
+  "locations": { "label": "찾기", "title": "위치", "viewAll": "모든 위치 보기" },
+  "cta": { "title": "미소를 준비하셨나요?", "call": "전화 (301) 838-4291", "chat": "채팅하기" },
+  "footer": { "copyright": "© {year} Healthy Smiles Dental Care. All rights reserved." },
+  "chatbox": { "title": "Healthy Smiles", "hi": "안녕하세요! 오늘 무엇을 도와드릴까요?", "findLocation": "위치 찾기", "services": "치과 서비스", "talkToSomeone": "상담하기", "back": "← 뒤로" }
+}

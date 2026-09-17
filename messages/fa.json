@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "خانه", "about": "درباره ما", "services": "خدمات", "locations": "مکان‌ها", "contact": "تماس" },
+  "hero": { "tagline": "دندانپزشکی خانواده و زیبایی", "title": "لبخند شما، اشتیاق ما", "subtitle": "Healthy Smiles Dental Care — دندانپزشکی مورد اعتماد خانواده‌ها در مریلند", "cta": "نزدیکترین مکان را پیدا کنید" },
+  "services": { "label": "خدمات ما", "title": "خدمات", "viewAll": "مشاهده همه خدمات" },
+  "locations": { "label": "یافت ما", "title": "مکان‌ها", "viewAll": "مشاهده همه مکان‌ها" },
+  "cta": { "title": "آماده لبخند زدن هستید؟", "call": "تماس (301) 838-4291", "chat": "گفتگو" },
+  "footer": { "copyright": "© {year} Healthy Smiles Dental Care. تمامی حقوق محفوظ است." },
+  "chatbox": { "title": "Healthy Smiles", "hi": "سلام! امروز چطور می‌توانم کمک کنم؟", "findLocation": "پیدا کردن مکان", "services": "خدمات دندانپزشکی", "talkToSomeone": "تماس با ما", "back": "← بازگشت" }
+}

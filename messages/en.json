@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "locations": "Locations",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Family & Cosmetic Dentistry",
+    "title": "Your Smile, Our Passion",
+    "subtitle": "Healthy Smiles Dental Care — trusted by families across Maryland",
+    "cta": "Find a Location Near You"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "Family & Cosmetic Dentistry in Maryland",
+    "desc1": "Healthy Smiles Dental Care has been serving families across Maryland for over 15 years. Our team of experienced dentists combines advanced technology with gentle, compassionate care.",
+    "desc2": "From routine cleanings to complete smile makeovers, we offer comprehensive dental services in a warm, welcoming environment.",
+    "cta": "Learn More"
+  },
+  "services": {
+    "label": "What We Offer",
+    "title": "Our Services",
+    "viewAll": "View All Services"
+  },
+  "locations": {
+    "label": "Find Us",
+    "title": "Our Locations",
+    "viewAll": "View All Locations",
+    "book": "Book an Appointment"
+  },
+  "doctors": {
+    "label": "Meet Your Team",
+    "title": "Our Doctors"
+  },
+  "reviews": {
+    "label": "What Patients Say",
+    "title": "Reviews",
+    "rating": "4.8 out of 5 stars — 955+ Google reviews"
+  },
+  "tech": {
+    "label": "Advanced Care",
+    "title": "Our Technology"
+  },
+  "cta": {
+    "title": "Ready to Smile?",
+    "desc": "Book your appointment today and discover why thousands of families trust Healthy Smiles Dental Care.",
+    "call": "Call (301) 838-4291",
+    "chat": "Chat With Us"
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Contact Us",
+    "desc": "We'd love to hear from you. Reach out with questions or to book an appointment.",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "infoTitle": "Contact Information",
+    "mainOffice": "Main Office",
+    "hours": "Hours",
+    "hoursDetail": "Mon–Fri: 9am–6pm\nSat: 9am–2pm\nSun: Closed",
+    "locationsLabel": "Locations"
+  },
+  "footer": {
+    "tagline": "Family and cosmetic dentistry across Maryland. Your smile is our passion.",
+    "navigate": "Navigate",
+    "services": "Services",
+    "ourLocations": "Our Locations",
+    "copyright": "© {year} Healthy Smiles Dental Care. All rights reserved."
+  },
+  "chatbox": {
+    "title": "Healthy Smiles",
+    "subtitle": "How can we help?",
+    "hi": "Hi! How can I help you today?",
+    "findLocation": "Find a Location",
+    "services": "Dental Services",
+    "talkToSomeone": "Talk to Someone",
+    "zipPrompt": "What's your zip code?",
+    "find": "Find",
+    "nearestLocation": "Nearest location:",
+    "ourServices": "Our services:",
+    "callUs": "Call us at:",
+    "emergency": "Emergency? Call now — we're here to help.",
+    "back": "← Back"
+  }
+}
