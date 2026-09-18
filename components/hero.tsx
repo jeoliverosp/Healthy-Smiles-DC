@@ -11,13 +11,19 @@ const STATS = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-ink flex flex-col">
-      {/* Fondo: gradientes + textura CSS, cero assets */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_35%,rgba(198,172,143,0.22),transparent_70%),linear-gradient(180deg,#22333B_0%,#0A0908_60%,#0A0908_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,9,8,0.55)_100%)]" />
-      <div
-        className="absolute inset-0 opacity-[0.07]"
-        style={{ backgroundImage: "radial-gradient(rgba(234,224,213,0.9) 1px, transparent 1px)", backgroundSize: "26px 26px" }}
-      />
+      {/* Video YouTube fondo */}
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          title="Healthy Smiles background video"
+          src="https://www.youtube.com/embed/X9J2ea8iNnM?autoplay=1&mute=1&loop=1&playlist=X9J2ea8iNnM&controls=0&modestbranding=1&rel=0&playsinline=1"
+          allow="autoplay; encrypted-media"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-full min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2"
+        />
+      </div>
+
+      {/* Capa gradiente 60% para contraste */}
+      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,9,8,0.4)_100%)]" />
 
       {/* Contenido */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 pt-28 pb-10 text-center">
