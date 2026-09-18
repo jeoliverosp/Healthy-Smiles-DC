@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, Phone, X, Globe, MapPin } from "lucide-react";
+import { Menu, Phone, X, MapPin, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import LanguageSelect from "@/components/language-select";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -13,12 +14,10 @@ const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-const LANGUAGES = ["EN", "ES", "ZH", "KO", "FA", "FR", "HI"];
-
 const LOCATIONS = [
-  { name: "Silver Spring", phone: "(301) 838-4291", full: "(301) 838-4291" },
-  { name: "Rockville", phone: "(301) 838-3180", full: "(301) 838-3180" },
-  { name: "College Park", phone: "(240) 696-3668", full: "(240) 696-3668" },
+  { name: "Silver Spring", phone: "(301) 838-4291" },
+  { name: "Rockville", phone: "(301) 838-3180" },
+  { name: "College Park", phone: "(240) 696-3668" },
 ];
 
 export default function Header() {
@@ -33,7 +32,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close phone dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (phoneRef.current && !phoneRef.current.contains(e.target as Node)) {
@@ -51,205 +49,166 @@ export default function Header() {
 
   return (
     <>
-      {/* ═══ HEADER ═══ */}
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
           scrolled
-            ? "bg-cream/90 backdrop-blur-md border-b border-cream-hover"
-            : "bg-transparent"
+            ? "bg-ink/85 backdrop-blur-md border-b border-gold/20 shadow-lg"
+            : "bg-gradient-to-b from-ink/60 to-transparent"
         )}
       >
         <div className="mx-auto flex items-center justify-between px-5 py-3 md:px-8">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 no-underline">
-            <div className="h-8 w-8 rounded-full bg-gold flex items-center justify-center shrink-0">
+          {/* Logo — siempre izquierda */}
+          <Link href="/" className="flex items-center gap-2 no-underline group">
+            <div className="h-9 w-9 rounded-full bg-gold flex items-center justify-center shrink-0 ring-2 ring-gold/40 group-hover:ring-gold transition-all">
               <span className="text-ink font-display font-bold text-sm">HS</span>
             </div>
-            <span className="font-display font-semibold text-sm text-ink hidden sm:inline">
+            <span className="font-display font-semibold text-sm text-cream hidden sm:inline tracking-wide">
               Healthy Smiles
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm font-body font-medium tracking-wide uppercase no-underline transition-colors duration-fast",
-                  scrolled
-                    ? "text-ink hover:text-gold"
-                    : "text-cream/80 hover:text-cream"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Right side */}
-          <div className="flex items-center gap-3">
-            {/* Language selector — prominent */}
-            <div className="hidden md:flex items-center gap-1">
-              <Globe className="h-4 w-4 text-gold" />
-              {LANGUAGES.map((lang) => (
-                <Link
-                  key={lang}
-                  href={`/${lang.toLowerCase()}/`}
-                  className={cn(
-                    "px-2 py-1 text-xs font-body font-medium rounded border transition-colors no-underline",
-                    lang === "EN"
-                      ? "bg-ink text-cream border-ink"
-                      : "bg-transparent text-cream/60 border-cream/20 hover:border-gold hover:text-gold"
-                  )}
-                >
-                  {lang}
-                </Link>
-              ))}
+          {/* Derecha: idioma + call + hamburger */}
+          <div className="flex items-center gap-2.5">
+            <div className="hidden sm:block">
+              <LanguageSelect dark />
             </div>
 
-            {/* Call us now — dropdown with all locations */}
-            <div className="hidden sm:flex" ref={phoneRef}>
+            {/* Call us now — dropdown sedes */}
+            <div className="relative hidden sm:block" ref={phoneRef}>
               <button
                 onClick={() => setPhoneOpen(!phoneOpen)}
-                className={cn(
-                  "flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-body font-medium transition-colors",
-                  scrolled
-                    ? "bg-gold text-ink hover:bg-brown"
-                    : "bg-gold text-ink hover:bg-brown"
-                )}
-                aria-label="Call us"
+                className="flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-body font-semibold text-ink hover:bg-cream transition-colors shadow-md"
+                aria-label="Call us now"
                 aria-expanded={phoneOpen}
               >
                 <Phone className="h-4 w-4" />
-                <span>Call Now</span>
+                <span className="hidden md:inline">Call us now!</span>
+                <span className="md:hidden">Call</span>
+                <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", phoneOpen && "rotate-180")} />
               </button>
 
               {phoneOpen && (
-                <div className="absolute right-0 mt-2 w-56 rounded-lg border border-cream-hover bg-cream shadow-xl p-4 space-y-3">
+                <div className="absolute right-0 mt-2 w-60 rounded-xl border border-gold/25 bg-ink shadow-2xl p-2">
+                  <p className="px-3 pt-2 pb-1 text-step--1 font-body font-medium text-gold uppercase tracking-widest">
+                    Choose location
+                  </p>
                   {LOCATIONS.map((loc) => (
                     <a
                       key={loc.name}
                       href={`tel:${loc.phone.replace(/\D/g, "")}`}
-                      className="flex items-start gap-2 text-sm text-ink hover:text-gold transition-colors no-underline group"
+                      className="flex items-start gap-2.5 rounded-lg px-3 py-2.5 text-sm no-underline hover:bg-white/5 transition-colors group"
                     >
                       <MapPin className="h-4 w-4 text-gold mt-0.5 shrink-0" />
-                      <div>
-                        <p className="font-body font-medium">{loc.name}</p>
-                        <p className="text-brown text-xs">{loc.phone}</p>
-                      </div>
+                      <span>
+                        <span className="block font-body font-semibold text-cream group-hover:text-gold transition-colors">
+                          {loc.name}
+                        </span>
+                        <span className="block text-cream/60 text-xs">{loc.phone}</span>
+                      </span>
                     </a>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Hamburger — solo mobile */}
+            {/* Hamburger — siempre visible */}
             <button
               onClick={() => setMenuOpen(true)}
-              className={cn(
-                "lg:hidden flex items-center justify-center w-10 h-10 rounded-md transition-colors",
-                scrolled
-                  ? "text-ink hover:bg-cream-hover/50"
-                  : "text-cream hover:bg-white/10"
-              )}
+              className="flex items-center justify-center w-10 h-10 rounded-full border border-cream/25 text-cream hover:border-gold hover:text-gold transition-colors"
               aria-label="Open menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* ═══ MOBILE MENU ═══ */}
+      {/* ═══ PANEL HAMBURGER (derecha) ═══ */}
       <div
         className={cn(
-          "fixed inset-0 z-[100] transition-opacity duration-300 lg:hidden",
+          "fixed inset-0 z-[100] transition-opacity duration-300",
           menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >
         <div
-          className="absolute inset-0 bg-ink/50"
+          className="absolute inset-0 bg-ink/60 backdrop-blur-sm"
           onClick={() => setMenuOpen(false)}
           aria-hidden="true"
         />
 
         <div
           className={cn(
-            "absolute top-0 right-0 h-full w-full max-w-sm bg-cream shadow-2xl transition-transform duration-300 ease-out",
+            "absolute top-0 right-0 h-full w-full max-w-sm bg-deep shadow-2xl transition-transform duration-300 ease-out flex flex-col",
             menuOpen ? "translate-x-0" : "translate-x-full"
           )}
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
         >
-          <div className="flex justify-end p-5">
+          {/* Top bar panel */}
+          <div className="flex items-center justify-between p-5 border-b border-gold/15">
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-gold flex items-center justify-center">
+                <span className="text-ink font-display font-bold text-xs">HS</span>
+              </div>
+              <span className="font-display font-semibold text-cream">Menu</span>
+            </div>
             <button
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center w-10 h-10 rounded-md text-ink hover:bg-cream-hover/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold transition-colors"
               aria-label="Close menu"
             >
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" />
             </button>
           </div>
 
-          {/* Language in mobile menu */}
-          <div className="px-8 mb-4">
-            <div className="text-step--1 font-body font-medium text-brown uppercase tracking-widest mb-3">
-              Language
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {LANGUAGES.map((lang) => (
-                <Link
-                  key={lang}
-                  href={`/${lang.toLowerCase()}/`}
-                  onClick={() => setMenuOpen(false)}
-                  className={cn(
-                    "px-3 py-1.5 text-sm font-body font-medium rounded border transition-colors no-underline",
-                    lang === "EN"
-                      ? "bg-ink text-cream border-ink"
-                      : "bg-transparent text-ink border-brown/30 hover:border-gold hover:text-gold"
-                  )}
-                >
-                  {lang}
-                </Link>
-              ))}
-            </div>
+          {/* Idioma en panel */}
+          <div className="px-6 pt-5 sm:hidden">
+            <LanguageSelect dark />
           </div>
 
-          <nav className="flex flex-col px-8 gap-1">
-            {NAV_LINKS.map((link) => (
+          {/* Nav links */}
+          <nav className="flex flex-col px-6 py-4 overflow-y-auto">
+            {NAV_LINKS.map((link, i) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-xl font-display font-medium text-ink py-3 border-b border-cream-hover/60 no-underline hover:text-gold transition-colors"
+                className="group flex items-center justify-between py-4 border-b border-cream/10 no-underline"
               >
-                {link.label}
+                <span className="flex items-baseline gap-3">
+                  <span className="text-xs font-body text-gold/50">0{i + 1}</span>
+                  <span className="text-2xl font-display font-medium text-cream group-hover:text-gold group-hover:translate-x-1 transition-all">
+                    {link.label}
+                  </span>
+                </span>
+                <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </Link>
             ))}
           </nav>
 
-          <div className="px-8 mt-8">
-            <div className="text-step--1 font-body font-medium text-brown uppercase tracking-widest mb-3">
-              Call Us — All Locations
+          {/* Teléfonos sedes */}
+          <div className="mt-auto px-6 pb-6">
+            <p className="text-step--1 font-body font-medium text-gold uppercase tracking-widest mb-3">
+              Call us now!
+            </p>
+            <div className="space-y-1 rounded-xl border border-gold/20 bg-ink/50 p-2">
+              {LOCATIONS.map((loc) => (
+                <a
+                  key={loc.name}
+                  href={`tel:${loc.phone.replace(/\D/g, "")}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 no-underline hover:bg-white/5 transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-gold shrink-0" />
+                  <span>
+                    <span className="block text-cream text-sm font-body font-semibold">{loc.name}</span>
+                    <span className="block text-cream/50 text-xs">{loc.phone}</span>
+                  </span>
+                </a>
+              ))}
             </div>
-            {LOCATIONS.map((loc) => (
-              <a
-                key={loc.name}
-                href={`tel:${loc.phone.replace(/\D/g, "")}`}
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 text-ink text-base font-body font-medium no-underline hover:text-gold transition-colors py-2"
-              >
-                <Phone className="h-5 w-5 text-gold" />
-                <span>
-                  <p>{loc.name}</p>
-                  <p className="text-brown text-sm">{loc.phone}</p>
-                </span>
-              </a>
-            ))}
           </div>
         </div>
       </div>
